@@ -1,6 +1,7 @@
 
 #include <iostream>
-#include <ncurses.h>
+#include <stdio.h>
+#define GREEN 32
 using namespace std;
 namespace {
 	float** tabl;
@@ -21,13 +22,42 @@ namespace {
 			switch (wyb)
 			{
 			case 1:
+			
+			
+			cout << " |";
+			for(int i=0; i < rr2; i++){  //nr kolumny
+				
+					printf("%c[%dm",0x1B,GREEN);
+				cout <<i;
+					printf("%c[%dm",0x1B,0);
+				cout <<"|";
+			}
+			cout <<endl;
+			for(int a=0; a <=rr2; a++){
+				cout <<"==";
+			}
+				cout << endl;
+				
 				for (int i = 0; i < rr1; i++) {
+					
+						printf("%c[%dm",0x1B,GREEN);
+					cout << i;
+						printf("%c[%dm",0x1B,0);
+					cout << "|";
+					
+					
 					for (int j = 0; j < rr2; j++) {
 
-						cout << "Nr: " << i << "x" << j << " zawiera: " << tabl[i][j] << endl;
-
+						cout << tabl[i][j] << "|";
+							
 
 					}
+					cout << endl;
+					for(int a=0; a <=rr2; a++){
+						
+				cout <<"==";
+			}
+					cout << endl;
 				}
 
 				break;

@@ -1,8 +1,10 @@
 #include <iostream>
 #include <ncurses.h>
+#include <unistd.h>
 #include "tablica.cpp"
 #include "tablica_wysw.cpp"
 #include "menu.cpp"
+#include "zapisywanie.cpp"
 using namespace std;
 
 
@@ -10,25 +12,20 @@ using namespace std;
 int main() {
 	int a = 5;
 	int m;
-	int size1, size2, newsize1, newsize2;
+	int size1 , size2, newsize1, newsize2, pom1, pom2;
 
-	menu_pocz();
-	cout << "Podaj ilosc wierszy: ";
-	cin >> size1;
-	cout << "Podaj ilosc kolumn: ";
-	cin >> size2;
+	size_open();
 
-
-
-
-	//tablica_powstanie(&size1, &size2);
-
+	size1 = *x_ind;
+	size2 = *y_ind;
+	
 	float** table;
-
+	
 	 tablica_powstanie(&size1, &size2);
 
 	 table = tab;
 	 tabl = table;
+	 table_save = table;
 
 	 for (int i = 0; i < size1; i++) {
 		 for (int j = 0; j < size2; j++) {
@@ -42,7 +39,11 @@ int main() {
 
 	 tab = table;
 	 tabl = table;
-
+	table_save =table;
+	
+	file_open(size1, size2);
+	
+	table=table_save;
 
 	while (a!=1)
 	{
@@ -103,6 +104,17 @@ int main() {
 		
 
 	}
+
+	table_save=table;
+
+		size_close(size1, size2);
+
+	table_save = table;
+
+		file_close(size1, size2);
+
+
+
 
 	for (int i = 0; i < size2; i++)
 		delete[] table[i];
