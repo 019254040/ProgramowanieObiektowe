@@ -1,7 +1,7 @@
-//#include "tablica.hpp"
-//#include "tablica_wysw.hpp"
+#include "tablica.hpp"
+#include "tablica_wysw.hpp"
 #include "menu.hpp"
-//#include "zapisywanie.hpp"
+#include "zapisywanie.hpp"
 
 using namespace std;
 
