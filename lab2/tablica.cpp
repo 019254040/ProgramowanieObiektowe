@@ -1,21 +1,22 @@
-#include "menu.hpp"
+#include "tablica.hpp"
 
 
 using namespace std;
-
-
-namespace {
 	
 
 
-	void tablica_powstanie(int* r1, int* r2, float** tab) { //tutaj tworze pierwszy raz tablice dwuwymiarowa, zwracam wskaznik do niej
+	float** tablica_powstanie(int* r1, int* r2)
+	{ //tutaj tworze pierwszy raz tablice dwuwymiarowa, zwracam wskaznik do niej
+	
 		int wym1 = *r1;
 		int wym2 = *r2;
 
 		float** tablica = new float* [wym1];
 			for (int i = 0; i < wym2; i++)
-			tablica[i] = new float[wym2];
-
+			{
+				tablica[i] = new float[wym2];
+			}
+			
 			for (int i = 0; i < wym1; i++) {
 				for (int j = 0; j < wym2; j++) {
 
@@ -23,6 +24,7 @@ namespace {
 					}
 
 			}
+			return tablica;
 	}
 	
 	
@@ -35,10 +37,11 @@ namespace {
 	z=*x;
 	w=*y;
 	
+
 	for (int i = 0; i < z; i++) {
 		 for (int j = 0; j < w; j++) {
-
-			 tab[i][j] = 0;
+			 
+			tab[i][j] = zero;
 
 		 }
 
@@ -179,4 +182,3 @@ namespace {
 
 
 	}
-}

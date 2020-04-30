@@ -1,10 +1,6 @@
-#include "menu.hpp"
+#include "tablica_wysw.hpp"
 
-
-
-#define GREEN 32
 using namespace std;
-namespace {
 	
 
 	void wyswietlanie(int* r1, int* r2,  float**  tab) {
@@ -95,5 +91,5 @@ namespace {
 
 
 	}
-}
+
 

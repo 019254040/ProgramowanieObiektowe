@@ -1,22 +1,23 @@
-//#include "tablica.hpp"
-//#include "tablica_wysw.hpp"
+#include "tablica.hpp"
+#include "tablica_wysw.hpp"
 #include "menu.hpp"
-//#include "zapisywanie.hpp"
+#include "zapisywanie.hpp"
 
 using namespace std;
 
 float** table;
-int size1 , size2, oldsize1, oldsize2;
+int size1 , size2, oldsize1, oldsize2, choice;
 int* x_ind= &size1;
 int* y_ind= &size2;
-int loop;
+int loop=1;
+
 
 
 int main() {
-
+	////////
 	size_open(x_ind, y_ind);
 	
-	tablica_powstanie(x_ind, y_ind, table);
+	table= tablica_powstanie(x_ind, y_ind);
 
 	filling(x_ind, y_ind, table);
 	
@@ -27,7 +28,8 @@ int main() {
 
 
 	while(loop!=0){
-		switch(menu()) 
+		choice=menu(size1);
+		switch(choice) 
 		{
 
 			case 1:
@@ -36,7 +38,7 @@ int main() {
 
 				how(x_ind, y_ind);
 
-				tablica_powstanie(x_ind, y_ind, table);
+				table= tablica_powstanie(x_ind, y_ind);
 
 			break;
 			

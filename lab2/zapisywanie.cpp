@@ -1,13 +1,12 @@
-#include "menu.hpp"
+#include "zapisywanie.hpp"
 
 
 using namespace std;
 
-namespace{
-
 	
 	
-	void size_open(int *ind1, int *ind2){
+	void size_open(int *ind1, int *ind2)
+	{
 	
 	int x, y;
 	
@@ -42,6 +41,7 @@ namespace{
 	void file_open(int* size_line, int* size_column, float** table_save){
 	
 	int x,y;
+	float bufor;
 	
 	fstream file;
 	file.open("savefile.txt", ios::in);
@@ -55,7 +55,8 @@ namespace{
 		for(int i=0; i<x; i++){
 			for(int j=0; j<y; j++){
 	
-				file >> table_save[i][j];
+				file >> bufor;
+				table_save[i][j]= bufor;
 	
 	
 	
@@ -148,4 +149,3 @@ namespace{
 	
 	
 	
-}

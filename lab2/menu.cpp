@@ -1,14 +1,10 @@
 #include "menu.hpp"
-#include <iostream>
-#include <ncurses.h>
-
 
 using namespace std;
-namespace {
 
 	
 
-	int menu() 
+	int menu(int x) 
 	{
 
 		int m=0;
@@ -88,7 +84,7 @@ namespace {
 
 		
 	
-}
+
 
 
 
