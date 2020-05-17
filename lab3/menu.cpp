@@ -10,7 +10,7 @@ using namespace std;
 
 		int m=0;
 		
-	cout << endl <<"MENU" << endl;
+		cout << endl <<"MENU" << endl;
 		cout << "WYBIERZ NUMER OPERACJI KTORA CHCESZ WYKONAC, WCISNIJ ENTER BY POTWIERDZIC: " << endl;
 		cout << "1. Stworz nowa tabele (poprzednia zostanie usunieta)" << endl <<
 			"2. Zmien rozmiar istniejacej tabeli" << endl <<
@@ -88,7 +88,7 @@ int menu_operations()
 	
 	cin >> m;
 	
- return m;
+	return m;
 }
 
 		

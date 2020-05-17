@@ -31,7 +31,9 @@ int main()
 
 
 
-	while(loop!=0){
+	while(loop!=0)
+	{
+		
 		choice=menu();
 		switch(choice) 
 		{
@@ -70,7 +72,7 @@ int main()
 			case 5:
 			
 			switch(menu_operations())
-				{
+			{
 					case 1:	
 						addition_line (arr);
 					break;
