@@ -1,4 +1,5 @@
 #include "main.hpp"
+#include "menu.hpp"
 #include "tablica.hpp"
 
 
@@ -77,19 +78,24 @@ using namespace std;
 
 
 
-	void tablica_rozmiar(int old1, int old2, Tablica & tab) 
+	int tablica_rozmiar(int old1, int old2, Tablica & tab) 
 	{ //zmiana rozmiaru tablicy
 
 
 
-		if (tab.line>=old1 || tab.column>=old2) {
+		if (tab.line>=old1 || tab.column>=old2) 
+		{
 			float** tab_copy = new float* [tab.line];
 
 			for (int i = 0; i < tab.column; i++)
+			{
 			tab_copy[i] = new float[tab.column];
-
-			for (int i = 0; i < tab.line; i++) {
-				for (int j = 0; j < tab.column; j++) {
+			}
+			
+			for (int i = 0; i < tab.line; i++)
+				{
+				for (int j = 0; j < tab.column; j++) 
+				{
 
 					tab_copy[i][j] = 0;
 
@@ -100,10 +106,12 @@ using namespace std;
 
 
 
-			for (int i = 0; i < old1; i++) {
+			for (int i = 0; i < old1; i++) 
+			{
 				for (int j = 0; j < old2; j++)
+				{
 					tab_copy[i][j] = tab.tablica_str[i][j];
-
+				}
 			}
 			
 			for(int i=0; i < old2; i++)
@@ -115,7 +123,7 @@ using namespace std;
 
 			tab.tablica_str = tab_copy;
 			
-			for(int i=0; i < tab.column; i++)
+			for(int i=0; i < tab.line; i++)
 			{
 				delete[] tab_copy[i];
 			}
@@ -123,8 +131,12 @@ using namespace std;
 			delete[] tab_copy;
 		}
 		else {
-			cout << endl << "Nowe wymiary musza byc wieksze  od poprzednich!" << endl;
+			
+			return 1;
+			
 		}
+		
+		return 0;
 	}
 
 
@@ -143,38 +155,36 @@ using namespace std;
 		int wiersz, kolumna;
 		int koniec = 0;
 		
-
-		cout << "Rozmiar obecnej tablicy to: " << tab.line << "x" << tab.column << endl;
+	interface_aktualizowanie1(tab.line, tab.column);
+		
 
 		while (koniec == 0)
 		{
 
-			cout << "Ktory element tablicy chcesz edytowac?" << endl;
-			cout << "Wpisz numer wiersza: ";
+		interface_aktualizowanie2();
 
 			cin >> wiersz;
 			while (wiersz  < 0 || wiersz > tab.line)
 			{
-				cout << "Nie ma takiego wiersza! Wprowadz numer wiersza ponownie: ";
+				interface_aktualizowanie3();
 				cin >> wiersz;
 
 			}
 
-			cout << "Wpisz numer kolumny: ";
+				interface_aktualizowanie4();
 
 			cin >> kolumna;
 			while (kolumna < 0 || kolumna > tab.column)
 			{
-				cout << "Nie ma takiej kolumny! Wprowadz numer kolumny ponownie: ";
+				interface_aktualizowanie5();
 				cin >> kolumna;
 
 			}
 
-			cout << "W tej komorce znajduje sie: " << tab.tablica_str[wiersz][kolumna] << endl;
-			cout << "Wprowadz nowa wartosc: ";
+			interface_aktualizowanie6(tab.tablica_str[wiersz][kolumna]);
 			cin >> tab.tablica_str[wiersz][kolumna];
 
-			cout << endl << "Czy chcesz zakonczyc edycje? Jezeli tak wcisnij 1, jezeli nie kliknij dowolny inny przycisk. ";
+			interface_aktualizowanie7();
 
 
 

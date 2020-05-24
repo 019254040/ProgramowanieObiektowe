@@ -6,7 +6,7 @@ using namespace std;
 
 	
 	
-	void size_open(Tablica & tab)
+	int size_open(Tablica & tab)
 	{
 	
 	int x, y;
@@ -25,11 +25,11 @@ using namespace std;
 	
 		}
 		else {
-			cout << "ERROR SIZE_OPEN";
+			return 1;
 		}
 		
 		size_file.close();
-		
+		return 0;
 	}
 	
 	
@@ -39,7 +39,7 @@ using namespace std;
 	
 	
 	
-	void file_open(Tablica & tab)
+	int file_open(Tablica & tab)
 	{
 	
 	float bufor;
@@ -61,10 +61,12 @@ using namespace std;
 		} }
 	}
 	else {
-		cout << "ERROR FILE_OPEN";
+		return 2;
 	}
 	
 	file.close();
+	
+	return 0;
 	}
 	
 	
@@ -75,7 +77,7 @@ using namespace std;
 	
 	
 	
-	void size_close(Tablica & tab)
+	int size_close(Tablica & tab)
 	{
 	
 		fstream size_file_close;
@@ -93,10 +95,12 @@ using namespace std;
 	
 		}
 		else {
-			cout << "ERROR SIZE_CLOSE";
+			return 3;
 		}
 		
 		size_file_close.close();
+		
+		return 0;
 	}
 	
 	
@@ -107,7 +111,7 @@ using namespace std;
 	
 	
 	
-	void file_close(Tablica & tab)
+	int file_close(Tablica & tab)
 	{
 	
 		fstream file_close;
@@ -129,10 +133,11 @@ using namespace std;
 			}
 		}
 		else {
-			cout << "ERROR FILE_CLOSE";
+			return 4;
 		}
 		
 		file_close.close();
+		return 0;
 	}
 	
 	

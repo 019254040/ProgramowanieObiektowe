@@ -19,13 +19,13 @@ Tablica arr;
 int main() 
 {
 	////////
-	size_open(arr);
+	error_zapisywanie(size_open(arr));
 	
 	tablica_powstanie(arr);
 
 	filling(arr);
 	
-	file_open(arr);
+	error_zapisywanie(file_open(arr));
 	
 	//// interface
 
@@ -55,7 +55,13 @@ int main()
 				
 				how(arr);
 
-				tablica_rozmiar(oldsize1, oldsize2, arr);
+				if(1==tablica_rozmiar(oldsize1, oldsize2, arr))
+				{
+					error();
+					
+				}
+				
+				
 				
 			case 3:
 			
@@ -116,10 +122,10 @@ int main()
 	}
 	////
 
-		size_close(arr);
+		error_zapisywanie(size_close(arr));
 
 
-		file_close(arr);
+		error_zapisywanie(file_close(arr));
 
 		removing_table(arr);
 

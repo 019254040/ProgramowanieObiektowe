@@ -1,5 +1,6 @@
 #include "main.hpp"
 #include "tablica_wysw.hpp"
+#include "menu.hpp"
 
 using namespace std;
 	
@@ -8,8 +9,8 @@ using namespace std;
 	{
 		
 			int wyb;
-			cout << "Chcesz wyswietlic wszystkie elementy, czy wybrany pojedynczy?" << endl <<
-				"1. Wszystkie" << endl << "2. Wybrany" << endl;
+			
+			interface_wysw(1);
 
 			cin >>wyb;
 
@@ -20,7 +21,8 @@ using namespace std;
 			
 			
 			cout << " |";
-			for(int i=0; i < tab.line ; i++){  //nr kolumny
+			for(int i=0; i < tab.line ; i++)
+			{  //nr kolumny
 				
 					
 				cout <<i;
@@ -28,12 +30,14 @@ using namespace std;
 				cout <<"|";
 			}
 			cout <<endl;
-			for(int a=0; a <=tab.column; a++){
+			for(int a=0; a <=tab.column; a++)
+			{
 				cout <<"==";
 			}
 				cout << endl;
 				
-				for (int i = 0; i < tab.line; i++) {
+				for (int i = 0; i < tab.line; i++)
+					{
 					
 					
 					cout << i;
@@ -41,14 +45,16 @@ using namespace std;
 					cout << "|";
 					
 					
-					for (int j = 0; j < tab.column; j++) {
+					for (int j = 0; j < tab.column; j++)
+						{
 
 						cout << tab.tablica_str[i][j] << "|";
 							
 
 					}
 					cout << endl;
-					for(int a=0; a <=tab.column; a++){
+					for(int a=0; a <=tab.column; a++)
+					{
 						
 				cout <<"==";
 			}
@@ -58,19 +64,22 @@ using namespace std;
 				break;
 			case 2:
 				int x, y;
-				cout << "Wprowadz wspolrzedne:" << endl << "Wiersz: ";
+				
+				interface_wysw(2);
+				
 				cin >> x;
 				while (x<1 || x>tab.line)
 				{
-					cout << endl << "Nie ma takiej wspolrzednej, wprowadz poprawna: ";
+					interface_wysw(3);
+					
 					cin >> x;
 				}
 
-				cout << endl << "Kolumna: ";
+				interface_wysw(4);
 				cin >> y;
 				while (y<1 || y>tab.column)
 				{
-					cout << endl << "Nie ma takiej wspolrzednej, wprowadz poprawna: ";
+					interface_wysw(3);
 					cin >> y;
 				}
 

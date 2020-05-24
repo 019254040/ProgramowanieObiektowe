@@ -30,7 +30,7 @@ void removing_table(Tablica & tab);
 * @param[out] tab.tablica_str - tablica ze zmienionym rozmiarem
 */
 
-void tablica_rozmiar(int old1, int old2, Tablica & tab);
+int tablica_rozmiar(int old1, int old2, Tablica & tab);
 
 /**
 * @param[in] Tablica tab - struktura 

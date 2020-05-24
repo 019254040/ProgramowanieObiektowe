@@ -1,5 +1,8 @@
 #include "main.hpp"
+#include "tablica.hpp"
 #include "menu.hpp"
+#include "zapisywanie.hpp"
+#include "tablica_wysw.hpp"
 
 using namespace std;
 
@@ -91,21 +94,148 @@ int menu_operations()
 	return m;
 }
 
-		
 
-			
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-
-
-
-
-		
+void error()
+{
 	
+	
+	cout << endl << "Nowe wymiary musza byc wieksze  od poprzednich!" << endl;
+	
+	
+	
+}
 
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+void interface_aktualizowanie1 (int x, int y)
+{
 
+cout << "Rozmiar obecnej tablicy to: " << x << "x" << y << endl;
 
+}	
+
+void interface_aktualizowanie2 ()
+{
+	
+	cout << "Ktory element tablicy chcesz edytowac?" << endl;
+	cout << "Wpisz numer wiersza: ";
+	
+}
+
+void interface_aktualizowanie3 ()
+{
+	cout << "Nie ma takiego wiersza! Wprowadz numer wiersza ponownie: ";
+	
+}
+
+void interface_aktualizowanie4 ()
+{
+	cout << "Wpisz numer kolumny: ";
+
+	
+}
+
+void interface_aktualizowanie5 ()
+{
+cout << "Nie ma takiej kolumny! Wprowadz numer kolumny ponownie: ";
+
+}
+
+void interface_aktualizowanie6(float x)
+{
+	
+	cout << "W tej komorce znajduje sie: " << x << endl;
+	cout << "Wprowadz nowa wartosc: ";
+	
+}
+
+void interface_aktualizowanie7()
+{
+
+	cout << endl << "Czy chcesz zakonczyc edycje? Jezeli tak wcisnij 1, jezeli nie kliknij dowolny inny przycisk. ";
+
+}		
+	
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void error_zapisywanie(int x)
+{
+	
+	switch(x)
+	{
+	
+	case 1:
+	
+	cout << "ERROR SIZE_OPEN";
+	
+	break;
+	
+	case 2:
+	
+	cout << "ERROR FILE_OPEN";
+	
+	break;
+	
+	case 3:
+	
+	cout << "ERROR SIZE_CLOSE";
+	
+	break;
+	
+	case 4:
+	
+	cout << "ERROR FILE_CLOSE";
+	
+	break;
+	
+	default:
+	
+	break;
+	
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+void interface_wysw(int x)
+{
+	
+	switch(x)
+	{
+		
+	case 1:
+	
+		cout << "Chcesz wyswietlic wszystkie elementy, czy wybrany pojedynczy?" << endl <<
+				"1. Wszystkie" << endl << "2. Wybrany" << endl;
+	
+	break;
+	
+	case 2:
+				
+			cout << "Wprowadz wspolrzedne:" << endl << "Wiersz: ";
+				
+	break;
+	
+	case 3:
+	
+		cout << endl << "Nie ma takiej wspolrzednej, wprowadz poprawna: ";
+	
+	break;
+	
+	case 4:
+	
+		cout << endl << "Kolumna: ";
+	
+	break;
+	
+	default:
+	
+	break;
+	
+	}
+	
+}
 
 
