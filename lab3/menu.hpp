@@ -43,4 +43,6 @@ void interface_aktualizowanie7();
 void error_zapisywanie(int x);
 
 void interface_wysw(int x);
+
+void interface_operations(int x);
 #endif

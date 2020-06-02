@@ -238,4 +238,43 @@ void interface_wysw(int x)
 	
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
+void interface_operations(int x)
+{
+	
+	switch(x)
+	{
+	
+	case 1:
+		cout << endl << "W tablicy znajduje sie ";
+	
+	break;
+	
+	case 2:
+		cout<< " wierszy.";
+		cout << endl << "Ktory wiersz chcesz zsumowac?";
+		cout << endl << "Nr wiersza: ";
+	
+	break;
+	
+	case 3:
+		cout <<endl <<" Nie ma takiego adresu, wprowadz poprawny numer: ";
+	
+	break;
+	
+	case 4:
+	cout << endl <<"Suma elementow: " ;
+	
+	break;
+	
+	case 5:
+	cout << " kolumn.";
+	cout << endl << "Ktora kolumne chcesz zsumowac?";
+	cout << endl << "Nr kolumny: ";
+	
+	break;
+	
+	
+	}
+}

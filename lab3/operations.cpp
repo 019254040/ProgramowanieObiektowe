@@ -9,16 +9,16 @@ void addition_line (Tablica & tab)
 	int sum=0;
 	int control=1;
 	
-	cout << endl << "W tablicy znajduje sie " << tab.line << " wierszy.";
-	cout << endl << "Ktory wiersz chcesz zsumowac?";
-	cout << endl << "Nr wiersza: ";
+	interface_operations(1);
+	cout << tab.line ;
+	interface_operations(2);
 	cin >> nr_line;
 	
 	while(control!=0)
 	{	
 		if(nr_line < 0 || nr_line > tab.line)
 		{
-			cout <<endl <<" Nie ma takiego wiersza, wprowadz poprawny numer: ";
+			interface_operations(3);
 			cin >> nr_line;
 		}
 		else
@@ -34,7 +34,8 @@ void addition_line (Tablica & tab)
 		sum+= tab.tablica_str[nr_line][i];
 	}
 	
-	cout << endl <<"Suma elementow tego wiersza wynosi: " << sum;
+	interface_operations(4);
+	cout << sum;
 
 }
 
@@ -49,16 +50,16 @@ void addition_column (Tablica & tab)
 	int sum=0;
 	int control=1;
 	
-	cout << endl << "W tablicy znajduje sie " << tab.column << " kolumn.";
-	cout << endl << "Ktora kolumne chcesz zsumowac?";
-	cout << endl << "Nr kolumny: ";
+	interface_operations(1);
+	cout << tab.column ;
+	interface_operations(5);
 	cin >> nr_column;
 	
 	while(control!=0)
 	{	
 		if(nr_column < 0 || nr_column > tab.column)
 		{
-			cout <<endl <<"Nie ma takiej kolumny, wprowadz poprawny numer: ";
+			interface_operations(3);
 			cin >> nr_column;
 		}
 		else
@@ -72,7 +73,8 @@ void addition_column (Tablica & tab)
 		sum+= tab.tablica_str[i][nr_column];
 	}
 	
-	cout << endl <<"Suma elementow tej kolumny wynosi: " << sum;
+	interface_operations(4);
+	cout << sum;
 
 }
 

@@ -1,6 +1,29 @@
 #include "main.hpp"
 #include "menu.hpp"
 
+	void xd(){
+
+	Cell** tab = new Cell*[line];
+	for(int i=0; i <column; i++){
+		
+		tab[i]=new Cell[column];
+	}
+	
+
+
+	for (int i = 0; i < line ; i++)
+		{
+			delete[] tab[i];
+		}
+		
+		delete[] tab;
+
+
+
+
+	}
+
+
 	void Tablica::tablica_powstanie()
 	{ 
 	

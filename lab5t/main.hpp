@@ -2,12 +2,14 @@
 #define main_hpp
 #include <iostream>
 #include <fstream>
-#include <string>
 using namespace std;
 
 
 class Tablica
 {
+	
+	friend class Cell;
+	
 	private:
 	
 	/**
@@ -17,17 +19,14 @@ class Tablica
 	* @param old1, old2 - pomocnicze parametry zawierajace koljeno ilosc wierszy i kolumn
 	*/
 	
-	
 		float** tablica_str;
-		string** tablica_string;
 		int line;
 		int column;
 		int old1, old2;
 		
-
-	
-		
 	public:
+		
+		
 		
 		float const zero = 0;
 	
@@ -46,8 +45,7 @@ class Tablica
 	*@param[in] line, column
 	*/
 	
-		void tablica_powstanie_float();
-		void tablica_powstanie_string();
+		void tablica_powstanie();
 		
 	/**
 	*@param[in, out] tablica-str
@@ -61,7 +59,7 @@ class Tablica
 	*@param[in] line, column
 	*/
 	
-		void removing_table(int t);
+		void removing_table();
 		
 	/**
 	*@param[in] old1, old2
@@ -69,8 +67,7 @@ class Tablica
 	*@param[in, out] line, column
 	*/
 	
-		void tablica_rozmiar_float();
-		void tablica_rozmiar_string();
+		int tablica_rozmiar();
 		
 	/**
 	*@param[in, out] tablica-str
@@ -92,33 +89,27 @@ class Tablica
 	*@param[in, out] line, column
 	*/
 	
-		int size_open_float();
-		
-		int size_open_string();
+		int size_open();
 		
 	/**
 	*@param[in, out] tablica-str
 	*@param[in] line, column
 	*/
 	
-		int file_open_float();
-		
-		int file_open_string();
+		int file_open();
 		
 	/**
 	*@param[in] line, column
 	*/
 	
-		int size_close_float();
-		int size_close_string();
+		int size_close();
 		
 	/**
 	*@param[in] line, column
 	*@param[in] tablica-str
 	*/
 	
-		int file_close_float();
-		int file_close_string();
+		int file_close();
 	
 	/**
 	* Metody ponizej znajduja sie w operations.cpp
@@ -126,38 +117,38 @@ class Tablica
 	*@param[in] tablica-str
 	*/
 	
-		float addition_line (int nr);
-		float addition_column (int nr);
-		void minimum (int nr, int op);
-		void maximum (int nr, int op);
-		void average (int nr, int op);
+		void addition_line ();
+		void addition_column ();
+		void minimum();
+		void maximum ();
+		void average ();
 		
-		int interface_operations_add(int choice);
-		
-		float testing(int op);
-		
-		
-		int number_line();
-		int number_column();
 		
 		
 		
 };
 
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-class Cell : public Tablica
+class Cell
 {
+	friend class Tablica;
 	
-	float val;
-	string word;
+	private:
+		float floatvalue;
+		string stringvalue;
+	
+		Cell (float val){ ////////////////konstruktor 1
+			
+			floatvalue=val;
+		}
+		
+		Cell (string val){ /////////////////////////konstruktor 2
+			
+			stringvalue=val;
+		}
+	
+	
+	
+	
 	
 	
 	
@@ -168,4 +159,6 @@ class Cell : public Tablica
 	
 	
 };
+
+
 #endif

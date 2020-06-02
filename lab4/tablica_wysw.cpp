@@ -1,13 +1,12 @@
 #include "main.hpp"
-	
+#include "menu.hpp"
 
 	void Tablica::wyswietlanie() 
 	{
 		
 			int wyb;
-			cout << "Chcesz wyswietlic wszystkie elementy, czy wybrany pojedynczy?" << endl <<
-				"1. Wszystkie" << endl << "2. Wybrany" << endl;
-
+			
+			interface_wysw(1);
 			cin >>wyb;
 
 
@@ -54,12 +53,14 @@
 
 				break;
 			case 2:
+			
 				int x, y;
-				cout << "Wprowadz wspolrzedne:" << endl << "Wiersz: ";
+				interface_wysw(2);
 				cin >> x;
+				
 				while (x<1 || x>line)
 				{
-					cout << endl << "Nie ma takiej wspolrzednej, wprowadz poprawna: ";
+					interface_wysw(3);
 					cin >> x;
 				}
 
@@ -67,7 +68,7 @@
 				cin >> y;
 				while (y<1 || y>column)
 				{
-					cout << endl << "Nie ma takiej wspolrzednej, wprowadz poprawna: ";
+					interface_wysw(3);
 					cin >> y;
 				}
 

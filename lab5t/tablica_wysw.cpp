@@ -1,6 +1,5 @@
 #include "main.hpp"
 #include "menu.hpp"
-	
 
 	void Tablica::wyswietlanie() 
 	{
@@ -54,18 +53,18 @@
 
 				break;
 			case 2:
+			
 				int x, y;
-				
 				interface_wysw(2);
-				
 				cin >> x;
+				
 				while (x<1 || x>line)
 				{
 					interface_wysw(3);
 					cin >> x;
 				}
 
-				interface_wysw(4);
+				cout << endl << "Kolumna: ";
 				cin >> y;
 				while (y<1 || y>column)
 				{

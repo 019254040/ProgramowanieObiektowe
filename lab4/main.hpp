@@ -63,7 +63,7 @@ class Tablica
 	*@param[in, out] line, column
 	*/
 	
-		void tablica_rozmiar();
+		int tablica_rozmiar();
 		
 	/**
 	*@param[in, out] tablica-str
@@ -85,27 +85,27 @@ class Tablica
 	*@param[in, out] line, column
 	*/
 	
-		void size_open();
+		int size_open();
 		
 	/**
 	*@param[in, out] tablica-str
 	*@param[in] line, column
 	*/
 	
-		void file_open();
+		int file_open();
 		
 	/**
 	*@param[in] line, column
 	*/
 	
-		void size_close();
+		int size_close();
 		
 	/**
 	*@param[in] line, column
 	*@param[in] tablica-str
 	*/
 	
-		void file_close();
+		int file_close();
 	
 	/**
 	* Metody ponizej znajduja sie w operations.cpp
@@ -115,7 +115,7 @@ class Tablica
 	
 		void addition_line ();
 		void addition_column ();
-		void minimum ();
+		void minimum();
 		void maximum ();
 		void average ();
 		
