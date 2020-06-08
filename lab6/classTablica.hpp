@@ -5,40 +5,7 @@
 #include <string>
 using namespace std;
 
-class Cell
-{
-	friend class Tablica;
-	
-	public:
-	
-		float floatvalue;
-		string stringvalue;
-		int which;
-	
-	
-	
-		void floatFunction (float val){ 
-			
-			floatvalue=val;
-			which=1;
-			
-		}
-		
-		void stringFunction (string val){ 
-			
-			stringvalue=val;
-			which=2;
-			
-		}
-		
-		float floatOut(){
-			return floatvalue;
-		}
-		
-		string stringOut(){
-			return stringvalue;
-		}
-};
+
 
 
 
@@ -78,7 +45,7 @@ class Tablica
 	
 	
 		
-		float const zero = 0;
+	
 	
 	/**
 	* Metody ponizej znajduja sie w pliku tablica.cpp

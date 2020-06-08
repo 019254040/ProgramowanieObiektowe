@@ -1,5 +1,6 @@
+#include "classCell.hpp"
+#include "classTablica.hpp"
 #include "menu.hpp"
-#include "main.hpp"
 
 	int menu() 
 	{

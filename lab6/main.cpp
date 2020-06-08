@@ -1,6 +1,7 @@
-#include "main.hpp"
+#include "classCell.hpp"
+#include "classTablica.hpp"
 #include "menu.hpp"
-
+	
 int choice;
 
 int loop=1;

@@ -1,6 +1,6 @@
 
-output: main.o menu.o tablica_wysw.o tablica.o zapisywanie.o operations.o
-		g++ main.o menu.o tablica_wysw.o tablica.o  zapisywanie.o operations.o -o output
+output: main.o menu.o tablica_wysw.o tablica.o zapisywanie.o operations.o classCell.o
+		g++ main.o menu.o tablica_wysw.o tablica.o  zapisywanie.o operations.o classCell.o -o output
 		
 main.o: main.cpp
 	g++ -c main.cpp
@@ -19,6 +19,9 @@ zapisywanie.o: zapisywanie.cpp
 	
 operations.o: operations.cpp
 	g++ -c operations.cpp
+	
+classCell.o: classCell.cpp
+	g++ -c classCell.cpp
 	
 clean:
 	rm *.o output

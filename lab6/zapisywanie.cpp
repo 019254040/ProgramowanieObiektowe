@@ -1,4 +1,5 @@
-#include "main.hpp"
+#include "classCell.hpp"
+#include "classTablica.hpp"
 #include "menu.hpp"
 	
 	int Tablica::size_open()
