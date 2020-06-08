@@ -17,7 +17,6 @@ class Tablica
 	private:
 	
 	/**
-	* @param tablica_str - tablica elementow
 	* @param line - ilosc wierszy tablicy
 	* @param column - ilosc kolumn tablicy
 	* @param old1, old2 - pomocnicze parametry zawierajace koljeno ilosc wierszy i kolumn
@@ -31,20 +30,23 @@ class Tablica
 		
 	public:
 	
-	
+	/**
+	*@param string*types - tablica stringow
+	*@param Cell* cellArr - tablica obiektow klasy Cell
+	*/
 		string* types;
 	
 		Cell** cellArr;
-		
+	
+	/**
+	* Ponizsze funkcje obsluguja tablice stringow types
+	*@param[out] string* types;
+	*/
 	void type_create();
 	
 	void type_choose();
 	
 	void removing_type();
-	
-	
-	
-		
 	
 	
 	/**
